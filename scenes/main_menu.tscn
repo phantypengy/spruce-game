@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://c5cpybeege7iu"]
+
+[ext_resource type="Script" uid="uid://5pber84k1kgj" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[sub_resource type="Theme" id="Theme_25qap"]
+
+[node name="MainMenu" type="Node2D" unique_id=182313015]
+script = ExtResource("1_l6cm7")
+
+[node name="title" type="Label" parent="." unique_id=416385279]
+offset_right = 1920.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 72
+text = "rhythm game !!!!!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=785324972]
+offset_top = 500.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_25qap")
+
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer" unique_id=1473105372]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="play" type="Button" parent="CenterContainer/MainButtons" unique_id=197259050]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "play"
+
+[node name="settings" type="Button" parent="CenterContainer/MainButtons" unique_id=507431102]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "settings
+"
+
+[node name="quit" type="Button" parent="CenterContainer/MainButtons" unique_id=664353471]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "quit"
+
+[node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=459618473]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="back" type="Button" parent="CenterContainer/SettingsMenu" unique_id=1203530875]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "back"
+
+[node name="mainvolslider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=1603236984]
+custom_minimum_size = Vector2(484, 80)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/mainvolslider" unique_id=1075265145]
+custom_minimum_size = Vector2(484, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 101.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 40
+text = "main volume"
+horizontal_alignment = 1
+
+[node name="musicvolslider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=1874903817]
+custom_minimum_size = Vector2(484, 80)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/musicvolslider" unique_id=1417270784]
+custom_minimum_size = Vector2(484, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 101.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 40
+text = "music volume"
+horizontal_alignment = 1
+
+[node name="sfxvolslider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=1723761389]
+custom_minimum_size = Vector2(484, 80)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/sfxvolslider" unique_id=964355210]
+custom_minimum_size = Vector2(484, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 101.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 40
+text = "sfx volume"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/MainButtons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenu/back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/mainvolslider" to="." method="_on_mainvolslider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/musicvolslider" to="." method="_on_mainvolslider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/musicvolslider" to="." method="_on_musicvolslider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/sfxvolslider" to="." method="_on_sfxvolslider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/sfxvolslider" to="." method="_on_mainvolslider_value_changed"]
