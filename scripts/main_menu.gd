@@ -6,11 +6,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
@@ -36,3 +31,7 @@ func _on_musicvolslider_value_changed(value: float) -> void:
 
 func _on_sfxvolslider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), value)
+
+
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/test.tscn")

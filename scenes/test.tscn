@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://s3okgc252oss"]
+
+[ext_resource type="Script" uid="uid://c8chce1k41up8" path="res://scripts/test.gd" id="1_bl13t"]
+[ext_resource type="AudioStream" uid="uid://bvweaot3eeih" path="res://07.mp3" id="2_bl13t"]
+
+[node name="testing_area" type="Node2D" unique_id=1379335732]
+script = ExtResource("1_bl13t")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1566174457]
+stream = ExtResource("2_bl13t")
+
+[node name="Label" type="Label" parent="." unique_id=1229749885]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "press space for sound"
