@@ -1,15 +1,41 @@
 [gd_scene format=3 uid="uid://s3okgc252oss"]
 
 [ext_resource type="Script" uid="uid://c8chce1k41up8" path="res://scripts/test.gd" id="1_bl13t"]
-[ext_resource type="AudioStream" uid="uid://bvweaot3eeih" path="res://07.mp3" id="2_bl13t"]
+[ext_resource type="Texture2D" uid="uid://dpy4d5gr3e4ym" path="res://assets/glorp.png" id="3_iyx0m"]
+[ext_resource type="Script" uid="uid://t85slsiq2yki" path="res://scripts/player.gd" id="3_j5jx5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcx74"]
+radius = 61.2
+
+[sub_resource type="GDScript" id="GDScript_74lek"]
+script/source = "extends Sprite2D
+
+func wait(seconds: int) -> void:
+	await get_tree().create_timer(seconds)
+
+func on_Sprite_texture_changed():
+	if (texture != get_parent().first_texture):
+		wait(1)
+		texture = get_parent().first_texture;
+"
 
 [node name="testing_area" type="Node2D" unique_id=1379335732]
 script = ExtResource("1_bl13t")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1566174457]
-stream = ExtResource("2_bl13t")
 
 [node name="Label" type="Label" parent="." unique_id=1229749885]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "press space for sound"
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=207957287]
+position = Vector2(773, 228)
+script = ExtResource("3_j5jx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1194093218]
+shape = SubResource("CircleShape2D_vcx74")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=431852747]
+texture = ExtResource("3_iyx0m")
+script = SubResource("GDScript_74lek")
