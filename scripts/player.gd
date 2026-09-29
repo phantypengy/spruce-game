@@ -6,11 +6,16 @@ const JUMP_VELOCITY = -400.0
 
 @onready var first_texture = load("res://assets/glorp.png")
 @onready var second_texture = load("res://assets/glorp2.jpg")
+@onready var glorp = $Sprite2D
 
-func _physics_process(delta: float) -> void:
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
 	
+func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("play_sound")):
-		$Sprite2D.set_texture(second_texture)
+		glorp.set_texture(second_texture)
+
+func _physics_process(_delta: float) -> void:
 	
 	var direction := Input.get_axis("left", "right")
 	if direction:
