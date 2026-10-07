@@ -12,9 +12,11 @@ const JUMP_VELOCITY = -400.0
 func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("play_sound")):
 		glorp.set_texture(second_texture)
-		await get_tree().create_timer(1.0).timeout
+	if (Input.is_action_just_released("play_sound")):
 		glorp.set_texture(first_texture)
 
+
+# stock 2D movement function but i added up and down too
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
