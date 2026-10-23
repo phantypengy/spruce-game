@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cexjhne3gbi5y"]
+
+[ext_resource type="PackedScene" uid="uid://g31ldprdbtig" path="res://scenes/key_listener.tscn" id="1_2q6dc"]
+
+[node name="Level" type="Node2D" unique_id=1785917129]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=610348103]
+position = Vector2(960, 540)
+
+[node name="Key_Listener_D" parent="." unique_id=928100599 instance=ExtResource("1_2q6dc")]
+position = Vector2(810, 1000)
+frame = 1
+key_name = "down"
+
+[node name="Key_Listener_L" parent="." unique_id=1291216512 instance=ExtResource("1_2q6dc")]
+position = Vector2(660, 1000)
+key_name = "left"
+
+[node name="Key_Listener_U" parent="." unique_id=498534963 instance=ExtResource("1_2q6dc")]
+position = Vector2(1110, 1000)
+frame = 2
+key_name = "up"
+
+[node name="Key_Listener_R" parent="." unique_id=417666435 instance=ExtResource("1_2q6dc")]
+position = Vector2(1250, 1000)
+frame = 3
+key_name = "right"

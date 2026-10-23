@@ -99,6 +99,9 @@ theme_override_font_sizes/font_size = 40
 text = "sfx volume"
 horizontal_alignment = 1
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=898238963]
+position = Vector2(960, 540)
+
 [connection signal="pressed" from="CenterContainer/MainButtons/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CenterContainer/MainButtons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/MainButtons/quit" to="." method="_on_quit_pressed"]
