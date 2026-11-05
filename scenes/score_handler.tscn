@@ -4,3 +4,9 @@
 
 [node name="score_handler" type="Node2D" unique_id=1689511130]
 script = ExtResource("1_qaiqh")
+
+[node name="Label" type="Label" parent="." unique_id=1592419056]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 42
+text = "Score:"

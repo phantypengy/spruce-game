@@ -5,6 +5,7 @@ extends Sprite2D
 
 var falling_key_queue = []
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if falling_key_queue.size() > 0:
@@ -19,12 +20,16 @@ func _process(delta: float) -> void:
 			
 			# print(distance_from_target)
 			
+			# score stuff
 			if (distance_from_target < 20):
-				print("Perfect!");
+				print("hi")
 			elif (distance_from_target < 50):
-				print("Good")
+				print("hi")
+			elif (distance_from_target < 75):
+				print("hi")
 			else:
-				print("Miss")
+				print("hi")
+				
 			
 			key_to_pop.queue_free()
 
