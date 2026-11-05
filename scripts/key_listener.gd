@@ -2,6 +2,7 @@ extends Sprite2D
 
 @export var key_name : String = ""
 @export var falling_key = preload("res://scenes/falling_keys.tscn")
+@export var score_handler : Node2D
 
 var falling_key_queue = []
 
@@ -9,7 +10,7 @@ func _ready() -> void:
 	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if falling_key_queue.size() > 0:
 		# destroys arrows that have gone past the input threshold
@@ -21,17 +22,10 @@ func _process(delta: float) -> void:
 			var key_to_pop = falling_key_queue.pop_front()
 			var distance_from_target = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
 			
-			# print(distance_from_target)
+			# print(distance_from_target) # debug
 			
-			# score stuff
-			if (distance_from_target < 20):
-				print("perfect")
-			elif (distance_from_target < 50):
-				print("great")
-			elif (distance_from_target < 75):
-				print("good")
-			else:
-				print("miss")
+			# goes to score_handler.gd
+			score_handler.calculate_score(distance_from_target)
 			
 			key_to_pop.queue_free()
 
