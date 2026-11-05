@@ -11,9 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func score_calculator(score : String) -> void:
+func score_calculator(noteScore : String) -> void:
 	
-	match score:
+	match noteScore:
 		"perfect":
 			score += 10
 		"great":
