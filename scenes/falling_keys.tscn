@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://bqjwl2djyy5cp" path="res://scripts/falling_keys.gd" id="2_m5rbe"]
 
 [node name="Falling_Keys" type="Sprite2D" unique_id=1834223705]
-scale = Vector2(2, 2)
+position = Vector2(1.5, 3)
+scale = Vector2(2.0517242, 2.0833333)
 texture = ExtResource("1_m5rbe")
 hframes = 4
 vframes = 3
-frame = 4
 script = ExtResource("2_m5rbe")
 
 [node name="Timer" type="Timer" parent="." unique_id=1583636228]
