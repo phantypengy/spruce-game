@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	# checks how long arrow takes to hit target
 	# at fall_speed = 500 it's around 2.15 seconds
 	if global_position.y > pass_threshold and not $Timer.is_stopped():
-		print($Timer.wait_time - $Timer.time_left)
+		# print($Timer.wait_time - $Timer.time_left)
 		$Timer.stop()
 		has_passed = true
 	

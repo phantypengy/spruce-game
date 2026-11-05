@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 			var key_to_pop = falling_key_queue.pop_front()
 			var distance_from_target = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
 			
-			print(distance_from_target)
+			# print(distance_from_target)
 			
 			if (distance_from_target < 20):
 				print("Perfect!");
