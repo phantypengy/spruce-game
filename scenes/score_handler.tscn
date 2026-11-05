@@ -9,4 +9,4 @@ script = ExtResource("1_qaiqh")
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 42
-text = "Score:"
+text = "Score: 0"
