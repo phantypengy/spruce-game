@@ -5,9 +5,12 @@ extends Sprite2D
 
 var falling_key_queue = []
 
-
+func _ready() -> void:
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if falling_key_queue.size() > 0:
 		# destroys arrows that have gone past the input threshold
 		if not is_instance_valid(falling_key_queue.front()):
@@ -22,14 +25,13 @@ func _process(delta: float) -> void:
 			
 			# score stuff
 			if (distance_from_target < 20):
-				print("hi")
+				print("perfect")
 			elif (distance_from_target < 50):
-				print("hi")
+				print("great")
 			elif (distance_from_target < 75):
-				print("hi")
+				print("good")
 			else:
-				print("hi")
-				
+				print("miss")
 			
 			key_to_pop.queue_free()
 

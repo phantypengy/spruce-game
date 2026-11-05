@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://cexjhne3gbi5y"]
 
 [ext_resource type="PackedScene" uid="uid://g31ldprdbtig" path="res://scenes/key_listener.tscn" id="1_2q6dc"]
-[ext_resource type="PackedScene" uid="uid://cnjlq266yefhl" path="res://scenes/score_handler.tscn" id="1_w7c3h"]
 
 [node name="Level" type="Node2D" unique_id=1785917129]
-
-[node name="score_handler" parent="." unique_id=1689511130 instance=ExtResource("1_w7c3h")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=610348103]
 position = Vector2(960, 540)
