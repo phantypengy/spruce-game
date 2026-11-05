@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://g31ldprdbtig"]
 
-[ext_resource type="Texture2D" uid="uid://db6clowlx46bq" path="res://assets/arrows.webp" id="1_64e6d"]
+[ext_resource type="Texture2D" uid="uid://i5u1ywsv6247" path="res://assets/iconsfix.png" id="1_64e6d"]
 [ext_resource type="Script" uid="uid://b40yv0jd647ab" path="res://scripts/key_listener.gd" id="2_64e6d"]
 
 [node name="Key_Listener" type="Sprite2D" unique_id=928100599]
-scale = Vector2(2, 2)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_64e6d")
 hframes = 4
 vframes = 3
