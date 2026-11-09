@@ -8,6 +8,7 @@ var has_passed : bool = false # true if falling arrow passes input frames
 var pass_threshold : float = 1000 # y position of the targets
 
 
+
 func _init() -> void:
 	set_process(false)
 
@@ -23,6 +24,9 @@ func _process(delta: float) -> void:
 		$Timer.stop()
 		has_passed = true
 	
+	# removes any arrows when scene swaps
+	if (!get_tree().current_scene):
+		queue_free()
 
 
 # sets up the spawn location & sprite to use for arrows
